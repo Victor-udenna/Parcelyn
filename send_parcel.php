@@ -91,6 +91,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .cost-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-dark); }
         .cost-total { border-top: 1px solid rgba(17,57,117,0.2); margin-top: 10px; padding-top: 10px; font-size: 1.2rem; font-weight: 800; color: var(--electric); display: flex; justify-content: space-between; }
         .zone-info { font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; }
+        @media (max-width: 900px) {
+            .container { padding: 24px; }
+            .card { padding: 24px; }
+            .row { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 520px) {
+            nav { flex-wrap: wrap; gap: 10px; }
+            nav div { width: 100%; display: flex; flex-wrap: wrap; gap: 10px; }
+            .container { padding: 16px; }
+        }
     </style>
 </head>
 <body>

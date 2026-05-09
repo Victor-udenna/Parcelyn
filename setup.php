@@ -4,10 +4,10 @@
  * Run this once to create tables and seed initial data
  */
 
-$host     = '127.0.0.1';
-$username = 'root';
-$password = '';
-$dbname   = 'parcel_db';
+$host     = 'sql207.infinityfree.com';
+$username = 'if0_41857263';
+$password = '6B91u0Lt5Pv';
+$dbname   = 'if0_41857263_parcel_db';
 
 echo "🔧 Setting up ParcelDelivery Database...\n\n";
 

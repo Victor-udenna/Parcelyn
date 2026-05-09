@@ -88,6 +88,26 @@ function statusColor($s) {
             font-size: 11px; font-weight: 700; color: #fff;
         }
         .edit-link { color: var(--electric); text-decoration: none; font-weight: 600; }
+        .table-wrapper { overflow-x: auto; }
+        @media (max-width: 1024px) {
+            .container { padding: 24px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .actions { flex-wrap: wrap; }
+            .btn { width: 100%; justify-content: center; }
+        }
+        @media (max-width: 720px) {
+            nav { flex-wrap: wrap; gap: 12px; padding: 16px 20px; }
+            nav div { width: 100%; display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; }
+            .stats { grid-template-columns: 1fr; }
+            .actions { flex-direction: column; }
+            .table-wrapper { margin-bottom: 16px; }
+            table { min-width: 720px; }
+            th, td { padding: 12px 10px; font-size: 0.78rem; }
+            .tracking-cell { gap: 6px; flex-wrap: wrap; }
+        }
+        @media (max-width: 520px) {
+            .container { padding: 16px; }
+        }
     </style>
 </head>
 <body>
@@ -113,6 +133,7 @@ function statusColor($s) {
         <a href="track_parcel.php" class="btn btn-secondary"> Track Parcel</a>
     </div>
 
+    <div class="table-wrapper">
     <table>
         <thead>
             <tr>
@@ -154,8 +175,7 @@ function statusColor($s) {
             </tr>
         <?php endforeach; ?>
         </tbody>
-    </table>
-</div>
+    </table>    </div></div>
 <script>
     document.querySelectorAll('tr[data-href]').forEach(row => {
         row.addEventListener('click', () => {

@@ -103,6 +103,21 @@ $zones = $pdo->query("SELECT * FROM price_zones ORDER BY price_per_kg ASC")->fet
         .modal-actions { display:flex; gap:12px; }
         .btn-cancel { background:#d4d9e8; color: var(--text-dark); flex:1; }
         .btn-save { background: var(--electric); color: var(--surface); flex:1; }
+        .table-wrapper { overflow-x: auto; }
+        @media (max-width: 880px) {
+            .container { padding: 24px; }
+            .grid { grid-template-columns: 1fr; }
+            .card { padding: 24px; }
+            nav { flex-wrap: wrap; gap: 10px; }
+            nav div { display: flex; flex-wrap: wrap; gap: 8px; }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 18px; }
+            .btn-primary, .btn-danger, .btn-edit { width: 100%; text-align: center; }
+            table { min-width: 600px; }
+            th, td { padding: 10px 8px; font-size: 0.8rem; }
+            .modal-card { width: calc(100% - 32px); padding: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -151,6 +166,7 @@ $zones = $pdo->query("SELECT * FROM price_zones ORDER BY price_per_kg ASC")->fet
         <!-- Zones Table -->
         <div class="card">
             <h3 style="margin-bottom:20px;color:var(--text-dark);">Current Zones</h3>
+            <div class="table-wrapper">
             <table>
                 <thead>
                     <tr>
@@ -181,9 +197,9 @@ $zones = $pdo->query("SELECT * FROM price_zones ORDER BY price_per_kg ASC")->fet
                 <?php endforeach; ?>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
-</div>
 
 <!-- Edit Modal -->
 <div class="modal" id="editModal">

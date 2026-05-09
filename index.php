@@ -77,6 +77,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .error { background: #ffe8e8; color: #a22f36; padding: 10px; border-radius: 8px; margin-bottom: 16px; font-size: 0.9rem; }
         .track-link { text-align: center; margin-top: 16px; }
         .track-link a { color: var(--electric); text-decoration: none; font-size: 0.9rem; }
+        @media (max-width: 480px) {
+            body { padding: 16px; }
+            .card { padding: 26px; }
+            h2 { font-size: 1.6rem; }
+        }
     </style>
 </head>
 <body>

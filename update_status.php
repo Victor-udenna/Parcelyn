@@ -61,6 +61,11 @@ $statuses = ['Pending','Picked Up','In Transit','Out for Delivery','Delivered','
         }
         .success { background: #eaf4ff; color: #0c3d72; padding: 12px; border-radius: 8px; margin-bottom: 20px; }
         .back { display: inline-block; margin-bottom: 20px; color: var(--electric); text-decoration: none; font-weight: 600; }
+        @media (max-width: 700px) {
+            nav { flex-wrap: wrap; gap: 8px; }
+            .container { padding: 20px; }
+            .card { padding: 24px; }
+        }
     </style>
 </head>
 <body>

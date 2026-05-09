@@ -1,8 +1,7 @@
--- Create Parcel Delivery Database
 CREATE DATABASE IF NOT EXISTS parcel_db;
 USE parcel_db;
 
--- Create Users Table
+
 CREATE TABLE IF NOT EXISTS users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -12,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Price zones table
+
 
 CREATE TABLE IF NOT EXISTS price_zones (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -29,7 +28,7 @@ INSERT INTO price_zones (zone_name, price_per_kg, base_price, description) VALUE
 ('Zone C - National',    2000,  5000, 'Across the country'),
 ('Zone D - Remote',      3500,  8000, 'Hard to reach areas');
 
--- Create Parcels Table
+
 CREATE TABLE IF NOT EXISTS parcels (
     id INT PRIMARY KEY AUTO_INCREMENT,
     tracking_number VARCHAR(50) UNIQUE NOT NULL,
@@ -50,6 +49,6 @@ CREATE TABLE IF NOT EXISTS parcels (
     FOREIGN KEY (zone_id) REFERENCES price_zones(id)
 );
 
--- Insert Sample User (email: demo@example.com, password: password123)
+
 INSERT INTO users (name, email, password, role) VALUES 
 ('Demo User', 'demo@example.com', '$2y$12$tV5Cy1AmysuhU74cy34OHOrzGXi7D2dL6dPolzuaZ9NjvpcWfVlzu', 'admin');

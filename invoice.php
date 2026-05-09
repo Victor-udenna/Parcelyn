@@ -73,6 +73,19 @@ if (isset($_GET['mark_paid'])) {
         .inv-totals .total-row { display: flex; justify-content: space-between; padding: 14px 0; font-size: 1rem; font-weight: 800; color: var(--text-dark); border-top: 2px solid var(--electric); margin-top: 8px; }
 
         .inv-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid #dce7ff; text-align: center; color: var(--text-muted); font-size: 10px; }
+        @media (max-width: 840px) {
+            .container { padding: 24px; }
+            .inv-header { flex-direction: column; gap: 20px; }
+            .inv-meta { grid-template-columns: 1fr; }
+            .inv-table th, .inv-table td { font-size: 10px; padding: 10px 12px; }
+            .inv-totals { width: 100%; margin-left: 0; }
+        }
+        @media (max-width: 520px) {
+            .actions { flex-direction: column; gap: 12px; }
+            .invoice { padding: 24px; }
+            .inv-header h2 { font-size: 1rem; }
+            .inv-footer { font-size: 9px; }
+        }
     </style>
 </head>
 <body>
@@ -105,9 +118,10 @@ if (isset($_GET['mark_paid'])) {
                 </p>
             </div>
             <div style="text-align:right;">
-             <?php $payStatus = $p['payment_status'] ?? 'Unpaid'; ?>
-<span class="inv-badge <?= $payStatus === 'Paid' ? 'badge-paid' : 'badge-unpaid' ?>">
-    <?= htmlspecialchars($payStatus) ?>
+                <?php $payStatus = $p['payment_status'] ?? 'Unpaid'; ?>
+                <span class="inv-badge <?= $payStatus === 'Paid' ? 'badge-paid' : 'badge-unpaid' ?>">
+                    <?= htmlspecialchars($payStatus) ?>
+                </span>
                 <p style="margin-top:12px;color:#888;font-size:11px;">
                     Date: <?= date('d M Y', strtotime($p['created_at'])) ?>
                 </p>

@@ -71,6 +71,16 @@ function stepIndex($status) {
         .step.done .name, .step.current .name { color: var(--text-dark); }
         .error { background: #ffe8e8; color: #a22f36; padding: 12px 20px; border-radius: 8px; width: 100%; max-width: 500px; }
         .login-link { color: var(--electric); text-decoration: none; margin-top: 20px; font-size: 0.9rem; }
+        @media (max-width: 700px) {
+            body { padding: 24px 12px; }
+            .search-box { flex-direction: column; }
+            button { width: 100%; }
+            .card { padding: 24px; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.6rem; }
+        }
     </style>
 </head>
 <body>

@@ -45,6 +45,14 @@ if (!$p) die("Invoice not found.");
         .paid {  color: #0e3f83; }
         .unpaid {  color: #b82834; }
         .footer { margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 11px; border-top: 1px solid #e5efff; padding-top: 20px; }
+        @media (max-width: 720px) {
+            body { padding: 20px; }
+            .header { display: block; }
+            .header div { margin-bottom: 18px; }
+            .meta { grid-template-columns: 1fr; }
+            table { font-size: 10px; }
+            .totals { width: 100%; margin-left: 0; }
+        }
         @media print {
             body { padding: 20px; }
             .no-print { display: none; }
