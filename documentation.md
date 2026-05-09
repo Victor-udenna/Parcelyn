@@ -14,16 +14,18 @@ The project is built as a traditional PHP application using individual PHP files
 
 This project was developed as a group assignment by the following team members:
 
-| S/N | Full Name | Matric Number |
-|---:|---|---|
-| 1 | Hamzat Basirat | EL/25/0160 |
-| 2 | Andrew Shaibu | EL/24/0198 |
-| 3 | Arikpo, Uveri Peter | EL/25/0158 |
-| 4 | Odetola Emmanuel Precious | EL/24/0187 |
-| 5 | Orji Joseph | EL/24/0194 |
-| 6 | Timothy Kenneth | EL/24/0214 |
-| 7 | Favour Ifurukpe | EL/24/0255 |
-| 8 | Victor Okwuosa | EL/24/0260 |
+| S/N | Full Name                 | Matric Number |
+| --: | ------------------------- | ------------- |
+|   1 | Hamzat Basirat            | EL/25/0160    |
+|   2 | Andrew Shaibu             | EL/24/0198    |
+|   3 | Arikpo, Uveri Peter       | EL/25/0158    |
+|   4 | Odetola Emmanuel Precious | EL/24/0187    |
+|   5 | Orji Joseph               | EL/24/0194    |
+|   6 | Timothy Kenneth           | EL/24/0214    |
+|   7 | Favour Ifurukpe           | EL/24/0255    |
+|   8 | Victor Okwuosa            | EL/24/0260    |
+|   9 | Abigail Ehonwa            | EL/24/0226    |
+|  10 | Akore Mercy               | EL/24/0171    |
 
 ---
 
@@ -37,15 +39,15 @@ https://github.com/Victor-udenna/Parcelyn
 
 ## Technology Stack
 
-| Area | Technology |
-|---|---|
-| Backend | PHP |
-| Database | MySQL / MariaDB |
-| Database Access | PDO |
-| Frontend | HTML, CSS, JavaScript |
-| Authentication | PHP Sessions |
-| Password Security | `password_hash()` / `password_verify()` |
-| Server | PHP built-in server, XAMPP, LAMP, MAMP, or similar |
+| Area              | Technology                                         |
+| ----------------- | -------------------------------------------------- |
+| Backend           | PHP                                                |
+| Database          | MySQL / MariaDB                                    |
+| Database Access   | PDO                                                |
+| Frontend          | HTML, CSS, JavaScript                              |
+| Authentication    | PHP Sessions                                       |
+| Password Security | `password_hash()` / `password_verify()`            |
+| Server            | PHP built-in server, XAMPP, LAMP, MAMP, or similar |
 
 ---
 
@@ -147,12 +149,12 @@ Each pricing zone has:
 
 Default zones from the SQL setup:
 
-| Zone | Base Price | Price Per Kg | Description |
-|---|---:|---:|---|
-| Zone A - Local | ₦1,000 | ₦500 | Within same city |
-| Zone B - Regional | ₦2,500 | ₦1,200 | Nearby states |
-| Zone C - National | ₦5,000 | ₦2,000 | Across the country |
-| Zone D - Remote | ₦8,000 | ₦3,500 | Hard to reach areas |
+| Zone              | Base Price | Price Per Kg | Description         |
+| ----------------- | ---------: | -----------: | ------------------- |
+| Zone A - Local    |     ₦1,000 |         ₦500 | Within same city    |
+| Zone B - Regional |     ₦2,500 |       ₦1,200 | Nearby states       |
+| Zone C - National |     ₦5,000 |       ₦2,000 | Across the country  |
+| Zone D - Remote   |     ₦8,000 |       ₦3,500 | Hard to reach areas |
 
 The pricing page allows users to:
 
@@ -477,16 +479,16 @@ Responsibilities:
 Add zone query:
 
 ```sql
-INSERT INTO price_zones 
-(zone_name, price_per_kg, base_price, description) 
+INSERT INTO price_zones
+(zone_name, price_per_kg, base_price, description)
 VALUES (?,?,?,?)
 ```
 
 Update zone query:
 
 ```sql
-UPDATE price_zones 
-SET zone_name=?, price_per_kg=?, base_price=?, description=? 
+UPDATE price_zones
+SET zone_name=?, price_per_kg=?, base_price=?, description=?
 WHERE id=?
 ```
 
@@ -706,14 +708,14 @@ parcel_db
 
 Stores application users.
 
-| Column | Type | Description |
-|---|---|---|
-| `id` | INT, Primary Key, Auto Increment | Unique user ID |
-| `name` | VARCHAR(100) | User full name |
-| `email` | VARCHAR(100), Unique | User email address |
-| `password` | VARCHAR(255) | Hashed password |
-| `role` | ENUM('admin', 'user') | User role |
-| `created_at` | TIMESTAMP | Account creation time |
+| Column       | Type                             | Description           |
+| ------------ | -------------------------------- | --------------------- |
+| `id`         | INT, Primary Key, Auto Increment | Unique user ID        |
+| `name`       | VARCHAR(100)                     | User full name        |
+| `email`      | VARCHAR(100), Unique             | User email address    |
+| `password`   | VARCHAR(255)                     | Hashed password       |
+| `role`       | ENUM('admin', 'user')            | User role             |
+| `created_at` | TIMESTAMP                        | Account creation time |
 
 Default demo user:
 
@@ -732,14 +734,14 @@ The password is stored as a hashed password.
 
 Stores delivery pricing zones.
 
-| Column | Type | Description |
-|---|---|---|
-| `id` | INT, Primary Key, Auto Increment | Unique zone ID |
-| `zone_name` | VARCHAR(100) | Name of the zone |
-| `price_per_kg` | DECIMAL(10,2) | Price charged per kg |
-| `base_price` | DECIMAL(10,2) | Base delivery price |
-| `description` | VARCHAR(255) | Zone description |
-| `created_at` | TIMESTAMP | Zone creation time |
+| Column         | Type                             | Description          |
+| -------------- | -------------------------------- | -------------------- |
+| `id`           | INT, Primary Key, Auto Increment | Unique zone ID       |
+| `zone_name`    | VARCHAR(100)                     | Name of the zone     |
+| `price_per_kg` | DECIMAL(10,2)                    | Price charged per kg |
+| `base_price`   | DECIMAL(10,2)                    | Base delivery price  |
+| `description`  | VARCHAR(255)                     | Zone description     |
+| `created_at`   | TIMESTAMP                        | Zone creation time   |
 
 Default zones:
 
@@ -756,23 +758,23 @@ Zone D - Remote
 
 Stores parcel delivery records.
 
-| Column | Type | Description |
-|---|---|---|
-| `id` | INT, Primary Key, Auto Increment | Unique parcel ID |
-| `tracking_number` | VARCHAR(50), Unique | Public tracking number |
-| `sender_id` | INT | User who created the parcel |
-| `sender_name` | VARCHAR(100) | Sender name copied from session |
-| `receiver_name` | VARCHAR(100) | Receiver full name |
-| `receiver_address` | TEXT | Receiver delivery address |
-| `receiver_phone` | VARCHAR(20) | Receiver phone number |
-| `weight` | DECIMAL(8,2) | Parcel weight in kg |
-| `description` | TEXT | Parcel description |
-| `zone_id` | INT | Linked pricing zone |
-| `cost` | DECIMAL(10,2) | Calculated delivery cost |
-| `payment_status` | ENUM('Unpaid','Paid') | Invoice payment status |
-| `status` | ENUM(...) | Parcel delivery status |
-| `created_at` | TIMESTAMP | Parcel creation time |
-| `updated_at` | TIMESTAMP | Last update time |
+| Column             | Type                             | Description                     |
+| ------------------ | -------------------------------- | ------------------------------- |
+| `id`               | INT, Primary Key, Auto Increment | Unique parcel ID                |
+| `tracking_number`  | VARCHAR(50), Unique              | Public tracking number          |
+| `sender_id`        | INT                              | User who created the parcel     |
+| `sender_name`      | VARCHAR(100)                     | Sender name copied from session |
+| `receiver_name`    | VARCHAR(100)                     | Receiver full name              |
+| `receiver_address` | TEXT                             | Receiver delivery address       |
+| `receiver_phone`   | VARCHAR(20)                      | Receiver phone number           |
+| `weight`           | DECIMAL(8,2)                     | Parcel weight in kg             |
+| `description`      | TEXT                             | Parcel description              |
+| `zone_id`          | INT                              | Linked pricing zone             |
+| `cost`             | DECIMAL(10,2)                    | Calculated delivery cost        |
+| `payment_status`   | ENUM('Unpaid','Paid')            | Invoice payment status          |
+| `status`           | ENUM(...)                        | Parcel delivery status          |
+| `created_at`       | TIMESTAMP                        | Parcel creation time            |
+| `updated_at`       | TIMESTAMP                        | Last update time                |
 
 Parcel status values:
 
@@ -1004,17 +1006,17 @@ Password: password123
 
 Because this is a simple PHP project, routes are direct PHP files.
 
-| Page | Access | Purpose |
-|---|---|---|
-| `/index.php` | Public | Login page |
-| `/dashboard.php` | Authenticated | Dashboard and parcel overview |
-| `/send_parcel.php` | Authenticated | Create new parcel |
-| `/pricing.php` | Authenticated | Manage pricing zones |
-| `/track_parcel.php` | Public | Track parcel by tracking number |
-| `/update_status.php?id={id}` | Authenticated | Update parcel status |
-| `/invoice.php?id={id}` | Authenticated | View parcel invoice |
-| `/print_invoice.php?id={id}` | Public currently | Printable invoice |
-| `/logout.php` | Authenticated | Logout |
+| Page                         | Access           | Purpose                         |
+| ---------------------------- | ---------------- | ------------------------------- |
+| `/index.php`                 | Public           | Login page                      |
+| `/dashboard.php`             | Authenticated    | Dashboard and parcel overview   |
+| `/send_parcel.php`           | Authenticated    | Create new parcel               |
+| `/pricing.php`               | Authenticated    | Manage pricing zones            |
+| `/track_parcel.php`          | Public           | Track parcel by tracking number |
+| `/update_status.php?id={id}` | Authenticated    | Update parcel status            |
+| `/invoice.php?id={id}`       | Authenticated    | View parcel invoice             |
+| `/print_invoice.php?id={id}` | Public currently | Printable invoice               |
+| `/logout.php`                | Authenticated    | Logout                          |
 
 ---
 
@@ -1410,5 +1412,3 @@ It supports:
 - Invoice generation
 - Printable invoices
 - Manual payment status update
-
-
