@@ -10,6 +10,23 @@ The project is built as a traditional PHP application using individual PHP files
 
 ---
 
+## Group Assignment Team
+
+This project was developed as a group assignment by the following team members:
+
+| S/N | Full Name | Matric Number |
+|---:|---|---|
+| 1 | Hamzat Basirat | EL/25/0160 |
+| 2 | Andrew Shaibu | EL/24/0198 |
+| 3 | Arikpo, Uveri Peter | EL/25/0158 |
+| 4 | Odetola Emmanuel Precious | EL/24/0187 |
+| 5 | Orji Joseph | EL/24/0194 |
+| 6 | Timothy Kenneth | EL/24/0214 |
+| 7 | Favour Ifurukpe | EL/24/0255 |
+| 8 | Victor Okwuosa | EL/24/0260 |
+
+---
+
 ## Repository
 
 ```text
