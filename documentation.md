@@ -29,6 +29,32 @@ This project was developed as a group assignment by the following team members:
 
 ---
 
+## Team Roles and Individual Contributions
+
+To make each member's participation clear for assessment, the team documented responsibilities by implementation area.
+
+
+| S/N | Team Member               | Key Contributions                                                                                                                                                                           |
+| --: | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   1 | Hamzat Basirat            | Implemented the login module in `index.php`, including email/password authentication flow, session initialization, and invalid-credential error feedback.                                   |
+|   2 | Andrew Shaibu             | Implemented and documented database connectivity in `db.php`, including PDO setup, connection configuration, and shared DB access pattern used across pages.                                |
+|   3 | Arikpo, Uveri Peter       | Implemented dashboard data logic in `dashboard.php`, including parcel statistics queries (total, pending, in-transit, delivered) and recent parcels listing.                                |
+|   4 | Odetola Emmanuel Precious | Built dashboard UI interactions in `dashboard.php`, including parcel table actions, status badge behavior, and tracking-number copy interaction.                                            |
+|   5 | Orji Joseph               | Implemented parcel creation workflow in `send_parcel.php`, including form processing, tracking number generation, parcel insertion, and invoice-link success flow.                          |
+|   6 | Timothy Kenneth           | Implemented pricing zone management in `pricing.php`, including add/edit/delete operations, editable zone modal logic, and pricing formula presentation.                                    |
+|   7 | Favour Ifurukpe           | Co-led core system implementation: implemented public tracking in `track_parcel.php`, status progress timeline logic, and contributed to integration/testing across modules.                |
+|   8 | Victor Okwuosa            | Project lead and major contributor: implemented invoice modules (`invoice.php`, `print_invoice.php`), payment-status update flow, and overall feature integration/final code harmonization. |
+|   9 | Abigail Ehonwa            | Handled database setup/testing support: worked on SQL schema validation using `setup.sql`, sample-data verification, and relationship consistency checks across modules.                    |
+|  10 | Akore Mercy               | Handled documentation, QA, and project review: compiled project documentation, setup guidance, known limitations, and security/recommendation sections for submission.                      |
+
+### Contribution Summary Note
+
+- Every team member contributed to the final submission.
+- Victor Okwuosa and Favour Ifurukpe carried most of the implementation and integration workload.
+- Other members handled assigned modules, validation, testing, UI support, and documentation to complete the project end-to-end.
+
+---
+
 ## Repository
 
 ```text
